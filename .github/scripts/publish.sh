@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-echo "_   _ ____  __  __   ____        _     _ _     _     _"
+echo " _   _ ____  __  __   ____        _     _ _     _     _"
 echo "| \ | |  _ \|  \/  | |  _ \ _   _| |__ | (_)___| |__ (_)_ __   __ _"
 echo "|  \| | |_) | |\/| | | |_) | | | | '_ \| | / __| '_ \| | '_ \ / _\` |"
 echo "| |\  |  __/| |  | | |  __/| |_| | |_) | | \__ \ | | | | | | | (_| |"
@@ -28,7 +28,7 @@ newVersion=`npm view . --silent version`
 
 git tag $newVersion
 
-npm publish --ignore-scripts
+npm publish --ignore-scripts --verbose
 
 git push origin master
 git push origin $newVersion
