@@ -8,8 +8,8 @@ echo "This script will publish a new version to NPM, create a version bump git c
 
 branchName=`git rev-parse --abbrev-ref HEAD`
 
-if [[ $branchName != "master" ]]; then
-  echo "Current branch is $branchName. Only the master branch can be published."
+if [[ $branchName != "main" ]]; then
+  echo "Current branch is $branchName. Only the main branch can be published."
   exit 1
 fi
 
