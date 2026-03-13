@@ -7,7 +7,7 @@ echo "| |\  |  __/| |  | | |  __/| |_| | |_) | | \__ \ | | | | | | | (_| |"
 echo "|_| \_|_|   |_|  |_| |_|    \__,_|_.__/|_|_|___/_| |_|_|_| |_|\__, |"
 echo "                                                              |___/ "
 
-echo "\nThis script will publish a new version to NPM, create a version bump git commit, tag it and push it."
+echo "This script will publish a new version to NPM, create a version bump git commit, tag it and push it."
 
 branchName=`git rev-parse --abbrev-ref HEAD`
 
@@ -28,7 +28,7 @@ newVersion=`npm view . --silent version`
 
 git tag $newVersion
 
-npm publish --ignore-scripts --verbose
+npm publish --provenance --ignore-scripts --verbose
 
 git push origin master
 git push origin $newVersion
